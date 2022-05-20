@@ -1,5 +1,10 @@
 # express-mysql-Api-project
 与上一个大作业联动，使用nodejs写一套接口，技术栈express+mysql+jwt  
+db：数据库配置  
+route：路由配置  
+router_handler：路由函数配置  
+schema：数据验证(待实现)  
+config：jwt配置
 ## API文档
 1.POST /server/getToken  
 Content-Type: application/x-www-form-urlencoded  
