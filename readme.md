@@ -1,55 +1,12 @@
-## API文档
-1.POST /server/getToken  
-Content-Type: application/x-www-form-urlencoded  
-字段：username=0121903490218&password=123456&type=0
-返回值："result": "ok","token":xxxx
+## 服务器挂载实验 
 
-2.POST /server/checkUserToken  
-authorization: Bearer  xxx  
-返回值：1通过/0error
+使用宝塔面板配置pm2插件辅助将本node项目上线  
+首先服务器要安装mysql环境，将数据库文件导入服务器中  
+导入时候踩坑了，服务器安装mysql时端口号改为了3607  
+而默认是3606，导致出错  
+pm2集成了node环境，所以不要自己安装，不然会引起版本错误  
+pm2使用时需要手动配置PM2 配置文件（ecosystem.config.js  
+详见：[PM2 配置文件（ecosystem.config.js 字段详细介绍）](https://juejin.cn/post/6926357629375610887)  
 
-3.POST /server/student/student   
-authorization: Bearer   
-Content-Type: application/x-www-form-urlencoded  
-字段：id=1  
-返回值：0 or
-```
-{
-    "id": "28987477",
-    "studentName": "xxxxxx",
-    "studentSchool": "xxxxxxx学院",
-    "studentNumber": "0xxxxxxxxx",
-    "studentClass": "信xxxxxxx",
-    "studentTel": "134xxxxx"
-}
-```
-
-4.POST /server/student/updateStudent   
-authorization: Bearer xxxx  
-Content-Type: application/x-www-form-urlencoded  
-字段：  
-id:28987477  
-studentName:xxx 
-studentSchool:xxx学院  
-studentNumber:0121xxxxx
-studentClass:信x  
-studentTel:134853xxxxx 
-返回值：0/1
-
-5.POST /server/record/page   
-authorization: Bearer xxx  
-Content-Type: application/x-www-form-urlencoded  
-字段：page=1&length=5  
-返回值：
-```
-数组：
-[
-    {
-        "sdate": "2020-08-01T16:00:00.000Z",
-        "starttime": "14:00:00",
-        "endtime": "16:00:00",
-        "state": 2,
-        "student": "",
-        "classroom": ""
-    },
-```
+知识点在于服务器端口配置和环境配置  
+使用nginx进行转发，截取路由将其转发至本地xxx端口  
