@@ -8,5 +8,8 @@ pm2集成了node环境，所以不要自己安装，不然会引起版本错误
 pm2使用时需要手动配置PM2 配置文件（ecosystem.config.js  
 详见：[PM2 配置文件（ecosystem.config.js 字段详细介绍）](https://juejin.cn/post/6926357629375610887)  
 
-知识点在于服务器端口配置和环境配置  
+于服务器端口配置和环境配置  
+查询端口号：  
+mysql> show global variables like 'port';  
+一定要在根目录下查询    
 使用nginx进行转发，截取路由将其转发至本地xxx端口  
