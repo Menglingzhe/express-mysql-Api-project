@@ -1,5 +1,5 @@
 # express-mysql-Api-project
-与上一个大作业联动，使用nodejs写一套接口，技术栈express+mysql+jwt  
+与上一个学院项目联动，改用nodejs写一套接口，技术栈express+mysql+jwt  
 db：数据库配置  
 route：路由配置  
 router_handler：路由函数配置  
